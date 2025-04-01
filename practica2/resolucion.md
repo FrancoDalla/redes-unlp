@@ -1,4 +1,23 @@
+<h1>Ejercicio 18</h1>
+<h3>
+Investigue cuál es el principal uso que se le da a las cabeceras Set-Cookie y Cookie en
+HTTP y qué relación tienen con el funcionamiento del protocolo HTTP.
+</h3>
+El header set-cookie se usa para enviar cookies desde el servidor al user-agent. Así este puede enviarlos
+de vuelta al servidor. 
+Por otro lado el head cookie de una solicitud HTTP contiene las cookies almacenadas que fueron enviadas
+previamente.
+La relación entre estas y HTTP es que este no es un protocolo que mantenga el estado de la conexión.
+Por lo que para almacenar información a lo largo de las conexiones tiene que recurrirse a estas 
+cabeceras y las cookies para hacer un seguimiento de lo realizado o de los datos del usuario
+
+
 <h1>Ejercicio 19</h1>
+
+<h3>
+Cuál es la diferencia entre un protocolo binario y uno basado en texto? ¿De qué tipo
+de protocolo se trata HTTP/1.0, HTTP/1.1 y HTTP/2?
+</h3>
 
 Una diferencia importante es que, por un lado un protocolo binario esta mejor delimitado para la computadora.
 Los datos que se envian tienen una longitud establecida. 
@@ -35,15 +54,11 @@ curl -X ?? www.redes.unlp.edu.ar/xxx
 < Date: Wed, 31 Jan 2018 22:22:22 GMT
 < Last-Modified: Sat, 20 Jan 2018 13:02:41 GMT
 < Content-Type: text/html; charset=UTF-8
-< Connection: close -> {Esto especifica que es 1.1} 
+< Connection: close -> {Esto especifica que es HTTP 1.1} 
 
 
 
 <h3>a. ¿Que versión de HTTP podría estar utilizando el servidor?</h3>
-
-La versión de HTTP que podria estar usando el servidor es HTTP 1.1 ya que en la primer linea contiene
-
-[>HEAD /metodos/ HTTP/?? ] -> En HTTP 2 y 3 no se especifica.
 
 Ademas al final de la respuesta figura connection: close ->En 1.1 se asume persistencia, como arriba
 no se definio esto, podemos suponer que utiliza esto.
