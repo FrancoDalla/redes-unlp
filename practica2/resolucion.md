@@ -1,3 +1,18 @@
+<h1>Ejercicio 20</h1>
+
+<h3>.a ¿Qué función cumple la cabecera host en HTTP 1.1? Existia en HTTP 1.0? ¿Que ocurre en HTTP 2?
+
+La cabecera host en HTTP 1.1 es una cabecera obligatoria que especifica el nombre de dominio del
+servidor para hosting virtual y, opcionalmente, el número de puerto TCP en el que el puerto escucha.
+
+En HTTP 1.0 existe y puede agregarse pero no es obligatorio como en su versión posterior.
+
+En HTTP 2 el header host es reemplazado por :authority: 
+
+
+
+
+
 <h1>Ejercicio de parcial</h1>
 
 curl -X ?? www.redes.unlp.edu.ar/xxx
@@ -40,4 +55,4 @@ If-Modified-Since: Sat, 20 Jan 2018 13:02:41 GMT
 ¿Cuál habría sido la respuesta del servidor web? ¿Qué habría hecho el
 navegador en este caso?</h3>
 
-La respuesta recibida sería 302
+La respuesta recibida sería 302https://developer.mozilla.org/es/docs/Web/HTTP/Headers/Host
