@@ -1,3 +1,13 @@
+<h1>Ejercicio 19</h1>
+
+Una diferencia importante es que, por un lado un protocolo binario esta mejor delimitado para la computadora.
+Los datos que se envian tienen una longitud establecida. 
+Por otro lado los protocolos de texto tienen que ir recorriendo el dato hasta encontrar un caracter como
+un salto de linea u otros caracteres similares que marquen el final del dato. 
+
+HTTP 1.0 1.1 son protocolos basados en texto.
+HTTP 2 es un protocolo binario.
+
 <h1>Ejercicio 20</h1>
 
 <h3>.a ¿Qué función cumple la cabecera host en HTTP 1.1? Existia en HTTP 1.0? ¿Que ocurre en HTTP 2?</h3>
