@@ -1,6 +1,6 @@
 <h1>Ejercicio 20</h1>
 
-<h3>.a ¿Qué función cumple la cabecera host en HTTP 1.1? Existia en HTTP 1.0? ¿Que ocurre en HTTP 2?
+<h3>.a ¿Qué función cumple la cabecera host en HTTP 1.1? Existia en HTTP 1.0? ¿Que ocurre en HTTP 2?</h3>
 
 La cabecera host en HTTP 1.1 es una cabecera obligatoria que especifica el nombre de dominio del
 servidor para hosting virtual y, opcionalmente, el número de puerto TCP en el que el puerto escucha.
