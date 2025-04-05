@@ -6,7 +6,7 @@
 <li>b. MX</li> 
 <li>c. PTR </li>
 <li>d. AAAA </li>
-<li>e. SR</li>
+<li>e. SRV</li>
 <li>f. NS</li>
 <li>g. CNAME</li>
 <li>h. SOA</li>
@@ -67,7 +67,18 @@ google.com.		236	IN	AAAA	2800:3f0:4002:810::200e
 nombre          ttl     tipo    direccion ipv6
 ```
 
-<h3>REGISTRO SR</h3>
+<h3>REGISTRO SRV</h3>
+Especifican un servidor y un puerto para servicios específicos.
+
+La estructura de estos es mas compleja siguen lo siguiente:
+
+[nombre_servicio] TLS IN SRV [prioridad][peso][nombre]
+
+Un ejemplo utilizando dig:
+```
+_sip._udp.sip.antisip.com. 43200 IN	SRV	10 50 5060 sip.antisip.com.
+_sip._udp.sip.antisip.com. 43200 IN	SRV	10 50 9090 sip.antisip.com.
+```
 
 <h3>REGISTRO NS</h3>
 
