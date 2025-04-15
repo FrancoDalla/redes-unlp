@@ -81,11 +81,82 @@ _sip._udp.sip.antisip.com. 43200 IN	SRV	10 50 9090 sip.antisip.com.
 ```
 
 <h3>REGISTRO NS</h3>
+El registro NS(name server) indica que servidor DNS es autoritativo para un dominio (osea, que servidor contiene los registros DNS en si).
+Basicamente estos dominios indican a donde ir para buscar la direccion IP de un domiio. 
+Es común que un dominio tenga múltiples registros de NS.
+
+La estructura es la siguiente:
+
+[nombre]  TLS IN NS [nombre]
+
+Ejemplo utilizando dig:
+```
+google.			21600	IN	NS	ns-tld4.charlestonroadregistry.com.
+```
 
 <h3>REGISTRO CNAME</h3>
+El registro CNAME(canonical name) apunta, desde un dominio alias, a uno canónico.. Estos se utilizan en lugar de los registros A
+cuando un dominio o subdominio es un alias a de otro dominio. Todos los registros CNAME deben apuntar a un dominio, nunca a una dirección IP.
+
+estructura: 
+[nombre] TLS IN CNAME [alias] 
+
+Ejemplo con dig:
+```
+```
 
 <h3>REGISTRO SOA</h3>
+El registro SOA (Start of authority) almacena información importante sobre un dominio o una zona.
+Tales como la dirección de correo del administrador, cuando se actualizó el dominio por última vez o 
+cuanto debe esperar el servidor entre actualizaciones.
+Todas las zonas DNS necesitan un registro SOA para cumplir las normas de la IETF. También son importantes
+para las transferencias de zona.
+
+Estructura(es un poco más compleja)
+[nombre] 
+[tipo]
+[mname]
+[rname]
+[serie]
+[actualizar]
+[RETRY]
+[TTL]
+
+Ejemplo con dig:
+```
+.			3111	IN	SOA	a.root-servers.net. nstld.verisign-grs.com. 2025041500 1800 900 604800 86400
+
+```
 
 <h3>REGISTRO TXT</h3>
+Permite a un administrador de dominios introducir texto en el DNS. Este se almacena en forma de una o más
+cadenas entre comillas. Su origen se penso para ingresar información legible para humanos. Pero ahora también
+se pueden agregar datos legibles por máquina. Un dominio puede tener muchos de estos.
 
+Estructura:
+[nombre] TLS IN TXT [valor]
 
+<h1>Ejercicio 7</h1>
+<h3>En internet un dominio suele tener más de un servidor DNS ¿Por qué cree que esto es asi?</h3>
+Imagino que, la razón de esto, es para tener la carga distribuída y, ademas, ser redundante.
+
+<h1>Ejercicio 8</h1>
+<h3>Cuando un dominio cuenta con más de un servidor, uno de ellos es el primario (o master) y los demas son secundarios (o slaves) ¿Por qué esto es asi?</h3>
+Esta es una forma de organizar los servidores para que se puedan configurar facilmente varios a la misma vez. El servidor primario 
+es el que es configurado y los demás replican a este. De esta manera podemos realizar una sola vez una modificación al servidor para que esta luego este disponible en los demas de forma automatica.
+
+<h1>Ejercicio 9</h1>
+<h3>Explique brevemente en que consiste el mecanismo de transferencia de zona y cuál es su finalidad</h3>
+La transferencia de zona es un mecanismo que utilizan los servidores de DNS para replicar la base de datos de un servidor maestro a uno o mas servidores DNS esclavos.
+La finalidad es facilitar la labor de configurar multiples servidores, reduciendo la tarea a configurar uno solo para que sea replicado por los demas.
+Si bien esto facilita las cosas, tiene también que incluirse y establecer una forma de que periodicamente los servidores esclavos consulten para confirmar que sus datos coinciden con el maestro.
+
+<h1>Ejercicio 10</h1>
+<h3>Imagine que usted es el administrador del dominio de DNS de la UNLP (unlp.edu.ar). A
+su vez, cada facultad de la UNLP cuenta con un administrador que gestiona su propio
+dominio (por ejemplo, en el caso de la Facultad de Informática se trata de info.unlp.edu.ar).
+Suponga que se crea una nueva facultad, Facultad de Redes, cuyo dominio será
+redes.unlp.edu.ar, y el administrador le indica que quiere poder manejar su propio dominio.
+¿Qué debe hacer usted para que el administrador de la Facultad de Redes pueda gestionar
+el dominio de forma independiente? (Pista: investigue en qué consiste la delegación de
+dominios). Indicar qué registros de DNS se deberían agregar.</h3>
