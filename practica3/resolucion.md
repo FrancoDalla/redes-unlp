@@ -160,3 +160,12 @@ redes.unlp.edu.ar, y el administrador le indica que quiere poder manejar su prop
 ¿Qué debe hacer usted para que el administrador de la Facultad de Redes pueda gestionar
 el dominio de forma independiente? (Pista: investigue en qué consiste la delegación de
 dominios). Indicar qué registros de DNS se deberían agregar.</h3>
+
+Ejemplo tomado de la teoría (delegación de autoridad)
+
+unlp.edu.ar , queremos agregar la facultad de redes con dominio redes.unlp.edu.ar.
+
+1 - hay que otorgar la autoridad sobre el dominio redes.unlp.edu.ar
+2 - Ahi tendremos que agregar registros DNS para guíar a redes.unlp.edu.ar
+	>Registro A y AAAA para guíar el nombre hacia la dirección IP del dominio.
+	>Registros name-server(NS)
