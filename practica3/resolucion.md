@@ -167,5 +167,34 @@ unlp.edu.ar , queremos agregar la facultad de redes con dominio redes.unlp.edu.a
 
 1 - hay que otorgar la autoridad sobre el dominio redes.unlp.edu.ar
 2 - Ahi tendremos que agregar registros DNS para guíar a redes.unlp.edu.ar
-	>Registro A y AAAA para guíar el nombre hacia la dirección IP del dominio.
-	>Registros name-server(NS)
+	>Registro A y AAAA para guíar el nombre hacia la dirección IP del dominio.<br>
+	>Registros name-server(NS)<br>
+
+#A CONSULTAR
+
+<h1>Ejercicio 12</h1>
+<h3>Investigue los comandos nslookup y host. ¿Para qué sirven? Intente con ambos
+comandos obtener:
+● Dirección IP de www.redes.unlp.edu.ar.
+● Servidores de correo del dominio redes.unlp.edu.ar.
+● Servidores de DNS del dominio redes.unlp.edu.ar.</h3>
+
+<h3>nslookup - query Internet name servers interactly</h3>
+Es un programa para consultar dns de internet. Tiene dos modos interactivo y no interactivo.
+
+salida de ejemplo
+
+´´´
+$nslookup google.com
+Server:		163.10.5.78
+Address:	163.10.5.78#53
+
+Non-authoritative answer:
+Name:	google.com
+Address: 142.250.79.78
+Name:	google.com
+Address: 2800:3f0:4002:811::200e
+´´´
+
+<h3>host - DNS lookup utility</h3>
+Es una herramienta simple para realizar lookups dns 
