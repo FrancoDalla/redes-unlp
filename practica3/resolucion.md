@@ -172,6 +172,19 @@ unlp.edu.ar , queremos agregar la facultad de redes con dominio redes.unlp.edu.a
 
 #A CONSULTAR
 
+
+<h1>Ejercicio 11</h1>
+<h3>a. Usar dig para optener la dirección del host www.redes.unlp.edu.ar en la vm responer:
+-¿La solicitud fue recursiva? ¿La respuesta? ¿Como sabemos esto?
+-¿Puede indicar si se trata de una respuesta autoritativa? ¿Que significa que lo sea?
+-¿Cual es la dirección IP del resolver utilizado? ¿Como lo sabe?
+</h3>
+
+La respuesta fue la siguiente :
+´´´
+
+´´´
+
 <h1>Ejercicio 12</h1>
 <h3>Investigue los comandos nslookup y host. ¿Para qué sirven? Intente con ambos
 comandos obtener:
@@ -198,3 +211,49 @@ Address: 2800:3f0:4002:811::200e
 
 <h3>host - DNS lookup utility</h3>
 Es una herramienta simple para realizar lookups dns 
+
+<h1>Ejercicio 13</h1>
+<h3>
+¿Qué función cumple en Linux/Unix el archivo /etc/hosts o en Windows el archivo
+\WINDOWS\system32\drivers\etc\hosts?
+</h3>
+Ambos archivos son archivos de texto plano que asocia direcciones ip con nombres de host, funcionando como 
+sistema de resolución de nombres local antes de consultar a un servidor DNS externo.
+
+<h1>Ejercicio 14</h1>
+<h3>
+Abra el programa Wireshark para comenzar a capturar el tráfico de red en la interfaz con
+IP 172.28.0.1. Una vez abierto realice una consulta DNS con el comando dig para averiguar
+el registro MX de redes.unlp.edu.ar y luego, otra para averiguar los registros NS
+correspondientes al dominio redes.unlp.edu.ar. Analice la información proporcionada por dig
+y compárelo con la captura.
+</h3>
+
+<h1>Ejercicio 15</h1>
+<h3>
+Dada la siguiente situación: “Una PC en una red determinada, con acceso a Internet,
+utiliza los servicios de DNS de un servidor de la red”. Analice:
+	a. ¿Qué tipo de consultas (iterativas o recursivas) realiza la PC a su servidor de
+	DNS?
+
+	b. ¿Qué tipo de consultas (iterativas o recursivas) realiza el servidor de DNS
+	para resolver requerimientos de usuario como el anterior? ¿A quién le realiza
+	estas consultas?
+</h3>
+
+a.
+La PC realiza peticiones recursivas a su servidor DNS (me imagino que habla del servidor local aca)
+
+b.
+El servidor responde mediante peticiones iterativas. Las consultas que realiza el servidor
+para resolver estos requerimentos son a otros servidores encargados de responder a consultas
+sobre los dominios que aparecen en la petición.
+
+<h1>Ejercicio 16</h1>
+<h3>Relacione DNS con HTTP. ¿Se puede navegar si no hay servicio de DNS?</h3>
+Mediante DNS se efectuan las consultas para sitios web transmitidos por HTTP. También 
+podría destacar que ambos son tecnologías de la capa de aplicación.
+Sobre la segunda pregunta la respuesta es si. Se puede navegar aunque no haya servicio de DNS.
+
+
+
