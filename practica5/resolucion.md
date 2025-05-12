@@ -114,3 +114,11 @@ El saludo de tres via consta de 3 pasos.
 >Paso 3:
 	Al recibir el segmento SINACK, el cliente también asigna buffers y variables a la conexión. El host cliente envía entonces al servidor otro segmento que confirma la recepción del segmento de conexión concedida por parte del servidor.(la confirmación se da almacenando el valor servidor_nsi + 1 en el campo de reconocimiento de la cabecera TCP) este segmento se llama comunmente segmento ACK. 
 
+<h1>Ejercicio 7</h1>
+<h3>Investigue que es el ISN (Initial-sequence-number) relacionelo con el saludo de tres vias.</h3>
+
+Durante el saludo de tres vías los numeros iniciales de secuencia son creados e intercambiados entre las dos entidades TCP. Estos números son usados para identificar los datos enviados dentro del flujo. También son usados para poder identificar los bytes de los datos de la aplicación. Siempre hay un par de estos números de secuencia incluidos en todo segmento TCP.
+
+<h1>Ejercicio 8</h1>
+<h3>Investigue que es el MSS ¿Cuando y cómo se negocia?</h3>
+El mss (Maximum-segment-size) es un valor que limita el tamaño de los paquetes. Esta se negocia mediante el campo "opciones" que tienen las cabeceras TCP durante el saludo de tres vías, especificamente este es enviado desde el cliente al servidor durante el SYN y luego desde el servidor al cliente durante el SYN-ACK. Tras esto se utiliza el menor valor de MSS dado entre ambos para la conexión.
