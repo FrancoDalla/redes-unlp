@@ -98,3 +98,19 @@ Por el otro lado UDP no regula esto. Una aplicación que emplee el protocolo UDP
 TCP al estar orientado a conexión, establece una conexión punto a punto entre dos dispositivos por lo que cada conexión esta limitada a los procesos que intercambian datos.
 Usa números de puertos para identificar apps especificas.
 UDP permite que muchos clientes o procesos envien datos por el mismo socket. 
+
+<h1>Ejercicio 5</h1>
+<h3>La PDU de la capa de transporte es el segmento. Sin embargo, aveces suele utilizarse el término datagrama. Indique cuando </h3>
+
+Se utiliza el termino datagrama al hablar de segmentos transmitidos mediante protocolo UDP.
+
+<h1>Ejercicio 6</h1>
+<h3>Describa el saludo de tres vias de TCP ¿UDP tiene esta caracteristica?</h3>
+El saludo de tres via consta de 3 pasos. 
+>Paso 1:
+	TCP, del lado del cliente, envía un segmento TCP especial al TCP del lado del servidor. Este segmento especial no tiene datos de la capa de aplicación. Pero uno de los bits indicadores de la cabecera del segmento, el bit SYN, se pone en 1 (por eso este segmento se llama comunmente segmento SYN). Ademas el cliente selecciona de forma aleatoria un número de secuencia inicial y lo coloca ne el campo número de secuencia del segmento TCP SYN. 
+>Paso 2:
+	Una vez que el datagrama IP que contiene el segmento SYN TCP llega al host servidor (si llega), el servidor extrae dicho segmento SYN del datagrama, asigna los buffers y variables TCP a la conexión y envía un segmento de conexión concedida al cliente TCP. Por último, el servidor elige su propio número de secuencia inicial y almacena este valor en el campo número de secuencia de la cabecera del segmento TCp. Este segmento de conexión concedida confirma la recepción del paquete syn. (este segmento se llama comunmente segmento SYNACK)
+>Paso 3:
+	Al recibir el segmento SINACK, el cliente también asigna buffers y variables a la conexión. El host cliente envía entonces al servidor otro segmento que confirma la recepción del segmento de conexión concedida por parte del servidor.(la confirmación se da almacenando el valor servidor_nsi + 1 en el campo de reconocimiento de la cabecera TCP) este segmento se llama comunmente segmento ACK. 
+
