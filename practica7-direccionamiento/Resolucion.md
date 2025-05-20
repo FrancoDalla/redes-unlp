@@ -56,3 +56,19 @@ subred asociada?</h3>
 
 
 
+
+
+
+<h1>División en subredes</h1>
+<h1>Ejercicio 6</h1>
+a.¿De que clase de red es la dirección dada (a, b o c)?
+b.¿Cual es la dirección de subred?
+c.¿Cual es la cantidad maxima de hosts que pueden estar en esa subred?
+d.¿Cual es la dirección de broadcast de esa subred?
+e.¿Cual es el rango de direcciones ip válidas dentro de la subred?
+
+<h1>172.16.58.223/26</h1>
+
+
+a. La red es de clase B 
+b. 
