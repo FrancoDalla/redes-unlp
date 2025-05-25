@@ -146,3 +146,12 @@ c. Seleccione una e indique dirección de broadcast y rango de direcciones asign
 en esa subred
 </h3>
 
+a. la mascara seria /28. Ya que para representar las 9 subredes se requerirían 4 bits extra. 
+b. [VER CUADERNO]
+c. [VER CUADERNO]
+
+
+<h1>Ejercicio 9</h1>
+<h3>
+
+</h3>
